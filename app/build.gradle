@@ -19,12 +19,37 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            testCoverageEnabled = true
+        }
     }
+
+    flavorDimensions "app","server"
+    productFlavors {
+        full {
+            applicationIdSuffix ".full"
+            dimension 'app'
+        }
+        demo {
+            applicationIdSuffix ".demo"
+            dimension 'app'
+        }
+        dev {
+            dimension "server"
+        }
+        staging {
+            dimension "server"
+        }
+        production {
+            dimension "server"
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.android.support:design:27.1.1'
