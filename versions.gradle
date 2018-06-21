@@ -14,10 +14,11 @@ ext {
     kotlin_version = "1.2.41"
     google_design_version = "27.1.1"
     constraint_layout_version = "1.1.2"
-    etherscan_api_version = "v1.0.3"
+    etherscan_api_version = "1.0.0"
     qr_scanner_version = "2018-05-28"
     lifecycle_version = "1.1.1"
     room_version = "1.1.1"
+    reactivex_rxjava2_rxkotlin_version = "2.2.0"
 
     // test-libs
     kluent_version = "1.34"
