@@ -52,11 +52,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${project.kotlin_version}"
 
-    // Google Design
-    implementation "com.android.support:appcompat-v7:${project.google_design_version}"
-    implementation "com.android.support.constraint:constraint-layout:${project.constraint_layout_version}"
-    implementation "com.android.support:design:${project.google_design_version}"
-
     // Other
     implementation "com.github.NovaCrypto:QrScanner:${project.qr_scanner_version}"
 }

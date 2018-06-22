@@ -49,4 +49,5 @@ dependencies {
     // Others
     implementation "com.github.EbenezerGH:etherscan-android-api:${project.etherscan_api_version}"
     implementation "io.reactivex.rxjava2:rxkotlin:$project.reactivex_rxjava2_rxkotlin_version"
+    implementation project(path: ':qrscanner')
 }

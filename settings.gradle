@@ -1,1 +1,1 @@
-include ':app', ':core', ':testutils', ':account'
+include ':app', ':core', ':testutils', ':account', ':qrscanner'

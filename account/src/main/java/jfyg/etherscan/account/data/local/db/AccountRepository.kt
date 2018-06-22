@@ -34,7 +34,7 @@ class AccountRepository internal constructor(application: Application) {
                         onError = { /*todo throw exception or return nulls*/ })
     }
 
-    private fun insert(account: Account) =
+    fun insert(account: Account) =
             Single.just(accountDao).map({ it }).subscribeBy(
                     onSuccess = { it.insert(account) },
                     onError = { /*todo throw exception or return nulls*/ }
