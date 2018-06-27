@@ -1,18 +1,18 @@
-package jfyg.etherscan.etherscanapidemo
+package jfyg.etherscan.accountinfo.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import jfyg.etherscan.accountinfo.R
+import jfyg.etherscan.core.application.BaseActivity
+import kotlinx.android.synthetic.main.account_main.*
 
-import kotlinx.android.synthetic.main.activity_main.*
-
-class MainActivity : AppCompatActivity() {
+class AccountActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.account_main)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->

@@ -1,11 +1,14 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion project.compile_sdk_version
+    buildToolsVersion project.build_tools_version
+
     defaultConfig {
+        applicationId "jfyg.etherscan.etherscanapidemo"
         minSdkVersion project.min_sdk
         targetSdkVersion project.target_sdk_version
         versionCode 1
@@ -45,6 +48,11 @@ android {
         production {
             dimension "environment"
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 dependencies {
