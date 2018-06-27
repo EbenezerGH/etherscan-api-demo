@@ -1,0 +1,18 @@
+import android.app.Application
+import jfyg.etherscan.core.di.AppModule
+import jfyg.etherscan.core.di.CoreComponent
+import jfyg.etherscan.core.di.DaggerCoreComponent
+
+open class CoreApp : Application() {
+    companion object {
+        lateinit var coreComponent: CoreComponent
+    }
+
+    override fun onCreate() {
+        initDI()
+    }
+
+    private fun initDI() {
+        coreComponent = DaggerCoreComponent.builder().appModule(AppModule(this)).build()
+    }
+}

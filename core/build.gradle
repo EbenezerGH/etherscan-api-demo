@@ -13,7 +13,6 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             postprocessing {
@@ -24,11 +23,32 @@ android {
                 proguardFile 'proguard-rules.pro'
             }
         }
+        debug {
+            testCoverageEnabled = true
+        }
     }
+    dependencies {
+        api fileTree(dir: 'libs', include: ['*.jar'])
+        api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${project.kotlin_version}"
 
-}
+        // google
+        api "com.android.support:appcompat-v7:${project.google_design_version}"
+        api "com.android.support.constraint:constraint-layout:${project.constraint_layout_version}"
+        api "com.android.support:design:${project.google_design_version}"
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${project.kotlin_version}"
+        // libs
+        api "com.google.dagger:dagger:${project.dagger2_version}"
+        kapt "com.google.dagger:dagger-compiler:${project.dagger2_version}"
+        api "io.reactivex.rxjava2:rxkotlin:$project.reactivex_rxjava2_rxkotlin_version"
+
+        // AAC
+        api "android.arch.persistence.room:rxjava2:${project.room_version}"
+        api "android.arch.lifecycle:extensions:${project.lifecycle_version}"
+        kapt "android.arch.persistence.room:compiler:${project.room_version}"
+        testImplementation "android.arch.persistence.room:testing:${project.room_version}"
+        testImplementation "android.arch.core:core-testing:${project.lifecycle_version}"
+
+        // other
+        api "com.github.EbenezerGH:etherscan-android-api:${project.etherscan_api_version}"
+    }
 }
